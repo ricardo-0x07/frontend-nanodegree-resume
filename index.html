@@ -23,7 +23,15 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 
   <!-- Load the page styles. -->
   <link href="css/style.css" rel="stylesheet">
+  <title>Framework Test Page</title>
 
+  <link rel="stylesheet"
+      href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script
+      src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <!--
   jQuery is a common JavaScript library for reading and making changes to the
   Document Object Model (DOM). The DOM is a tree that contains information
@@ -46,13 +54,90 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   Uncomment the <script> tag below when you're ready to add an interactive
   Google Map to your resume!
   -->
-<!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script> -->
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
 
-  <meta name="viewport" content="width=device-width">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <div id="main">
-    Hello world!   <!-- You'll be deleting this line in the course -->
+        <nav role="navigation" class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+              data-toggle="collapse" aria-expanded="false" data-Target="#myNavbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand nav-text" id="brand">
+              <!-- <img src="img/logo.png" class="img-responsive logo" alt="logo image"> -->
+              NEXT-UX
+            </a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle nav-text" data-toggle="dropdown"
+                  role="button" aria-haspopup="true" aria-expanded="false">
+                  Home
+                  <span class="caret" aria-hidden="true"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="listMyServices">Services</a>
+                  </li>
+                  <li>
+                    <a class="listMyCustomers">Customers</a>
+                  </li>
+                  <li>
+                    <a class="listMyProjects">Projects</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                  role="button" aria-haspopup="true" aria-expanded="false">
+                  Search
+                  <span class="caret" aria-hidden="true"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="serviceSearch">Services</a>
+                  </li>
+                  <li>
+                    <a class="customerSearch">Customers</a>
+                  </li>
+                  <li>
+                    <a class="projectSearch">Projects</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                  role="button" aria-haspopup="true" aria-expanded="false">
+                  About
+                  <span class="caret" aria-hidden="true"></span>
+                </a>
+              </li>
+           </ul>
+            <ul class="nav navbar-nav navbar-right">
+<!--               <li>
+                <a href="#" >
+                  <span id="name"></span>
+                </a>
+              </li>
+              <li>
+                <a href="#" >
+                  <span id="role"></span>
+                </a>
+              </li>
+ -->            </ul>
+          </div>
+        </div>
+      </nav>
+
+  <div id="main" class="container-fluid">
 
     <!--
     Everything from here to the <script> tag below is the skeleton of your
@@ -60,28 +145,86 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     resume below. You can pretty easily figure out what each section will
     display by looking at the id or at what's written between the <h2> tags.
     -->
-    <div id="header" class="center-content clear-fix">
-      <ul id="topContacts" class="flex-box"></ul>
+    <div class="header-container">
+      <div id="header" class="center-content clear-fix">
+        <!-- <ul id="topContacts" class="flex-box"></ul> -->
+      </div>
+      <div id="skills-container">
+      </div>
     </div>
+
     <div style="clear: both;"></div>
-    <div id="workExperience" class="gray">
-      <h2>Work Experience</h2>
+    <div class="row">
+      <div class="col-sm-12">
+        <div id="workExperience" class="gray">
+          <h2>Work Experience</h2>
+        </div>
+      </div>
     </div>
-    <div id="projects">
-      <h2>Projects</h2>
+    <div class="row">
+      <div class="col-sm-12">
+        <div id="projects">
+          <h2>Projects</h2>
+          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-example-generic" data-slide-to="0"
+                class="active"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div id="carousel-list" class="carousel-inner" role="listbox">
+              <div id="carousel-one" class="item active">
+              </div>
+              <div id="carousel-two" class="item">
+              </div>
+              <div id="carousel-three" class="item">
+              </div>
+            </div>
+          <!-- Controls -->
+          <a class="left carousel-control" href="#carousel-example-generic"
+            role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#carousel-example-generic"
+            role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        </div>
+      </div>
     </div>
-    <div id="education" class="gray">
+    <div class="row">
+      <div class="col-sm-12">
+        <div id="education" class="gray">
       <h2>Education</h2>
     </div>
-    <div id="mapDiv">
-      <h2>Where I've Lived and Worked</h2>
+      </div>
     </div>
-    <div id="lets-connect" class="dark-gray">
-      <h2 class="orange center-text">Let's Connect</h2>
-        <ul id="footerContacts" class="flex-box">
-      </ul>
+    <div class="row">
+      <div class="col-sm-12">
+          <h2 id="map-h2">Places Lived and Worked</h2>
+        <div id="mapDiv">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div id="lets-connect" class="dark-gray">
+          <h2 class="orange center-text">Let's Connect</h2>
+            <ul id="footerContacts" class="flex-box">
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
+
+  <footer class="text-center">
+    <h1 class="footer-text">NEXT-UX</h1>
+  </footer>
 
   <!--
   The next line tells the browser where to download the JavaScript file you'll be
@@ -115,26 +258,27 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 
 
     if(document.getElementsByClassName('flex-item').length === 0) {
-      document.getElementById('topContacts').style.display = 'none';
+      document.getElementById('topContacts').style.backgroundColor = '#000';
     }
     if(document.getElementsByTagName('h1').length === 0) {
-      document.getElementById('header').style.display = 'none';
+      document.getElementById('header').style.backgroundColor = '#000';
     }
     if(document.getElementsByClassName('work-entry').length === 0) {
-      document.getElementById('workExperience').style.display = 'none';
+      document.getElementById('workExperience').style.backgroundColor = '#000';
     }
     if(document.getElementsByClassName('project-entry').length === 0) {
-      document.getElementById('projects').style.display = 'none';
+      document.getElementById('projects').style.backgroundColor = '#000';
     }
     if(document.getElementsByClassName('education-entry').length === 0) {
-      document.getElementById('education').style.display = 'none';
+      document.getElementById('education').style.backgroundColor = '#000';
     }
     if(document.getElementsByClassName('flex-item').length === 0) {
-      document.getElementById('lets-connect').style.display = 'none';
+      document.getElementById('lets-connect').style.backgroundColor = '#000';
     }
     if(document.getElementById('map') === null) {
-      document.getElementById('mapDiv').style.display = 'none';
+      document.getElementById('mapDiv').style.backgroundColor = '#000';
     }
+
   </script>
 </body>
 </html>
